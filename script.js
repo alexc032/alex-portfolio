@@ -194,25 +194,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Particles removed for minimal design
 
-  // ===== VIDEO LAZY LOADING (memory optimization) =====
-  const videos = document.querySelectorAll('video');
-  const videoObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const video = entry.target;
-      if (entry.isIntersecting) {
-        // Load the video source only when it enters the viewport
-        if (!video.src && video.dataset.src) {
-          video.src = video.dataset.src;
-        }
-        video.play().catch(() => {});
-      } else {
-        video.pause();
-      }
-    });
-  }, { threshold: 0.1 });
-
-  videos.forEach(video => {
-    videoObserver.observe(video);
-  });
-
 });
