@@ -198,16 +198,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const videos = document.querySelectorAll('video');
   const videoObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+      const video = entry.target;
       if (entry.isIntersecting) {
-        entry.target.play().catch(() => {});
+        // Load the video source only when it enters the viewport
+        if (!video.src && video.dataset.src) {
+          video.src = video.dataset.src;
+        }
+        video.play().catch(() => {});
       } else {
-        entry.target.pause();
+        video.pause();
       }
     });
   }, { threshold: 0.1 });
 
   videos.forEach(video => {
-    video.removeAttribute('autoplay');
     videoObserver.observe(video);
   });
 
