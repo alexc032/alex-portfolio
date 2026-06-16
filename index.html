@@ -1,87 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Roblox developer portfolio — Luau Scripter specializing in modular game systems, DataStores, combat mechanics, and clean server-side architecture.">
-  <meta name="keywords" content="Roblox, Luau, Roblox Scripter, Roblox Developer, portfolio, Roblox studio, game dev">
-  <meta name="author" content="Alex RBX">
-  <title>alexPortafolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Alex RBX Portfolio — Luau scripter specializing in modular game systems, DataStores, combat mechanics, and clean server-side architecture on Roblox.">
+  <meta name="keywords" content="Roblox, Luau, Roblox Scripter, Roblox Developer, portfolio, Roblox studio, game dev, alexc308">
+  <meta name="author" content="alexc308">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="alexc308 — Roblox Luau Developer">
+  <meta property="og:description" content="Luau scripter specializing in modular, scalable game systems. Combat, DataStores, UI logic and more.">
+  <meta name="theme-color" content="#ff6b35">
+  <title data-i18n="title">alexc308 — Roblox Dev</title>
   <link rel="icon" href="assets/luau.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- ===== SCROLL PROGRESS BAR ===== -->
+  <div id="scroll-progress"></div>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
   <!-- ===== NAVBAR ===== -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <a href="#" class="nav-logo">
-        <span>alexPortafolio</span>
+  <header class="header" id="navbar">
+    <div class="nav-container container">
+      <a href="#inicio" class="nav-logo">
+        <img src="assets/luau.jpeg" alt="Logo alexc308" class="nav-logo-img">
+        <span>alexc308</span>
       </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#inicio">Home</a></li>
-        <li><a href="#sobre-mi">Why Hire Me</a></li>
-        <li><a href="#habilidades">Capabilities</a></li>
-        <li><a href="#portafolio">Portfolio</a></li>
-        <li><a href="#terminos">Terms</a></li>
-        <li><a href="#contacto">Contact</a></li>
-      </ul>
-      <div class="nav-toggle" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#inicio" class="nav-link active" data-i18n="nav.home">Home</a></li>
+          <li><a href="#sobre-mi" class="nav-link" data-i18n="nav.about">About</a></li>
+          <li><a href="#habilidades" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#portafolio" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#terminos" class="nav-link" data-i18n="nav.terms">Terms</a></li>
+          <li><a href="#contacto" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <select id="langSelect" class="lang-select" aria-label="Language">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-  </nav>
+  </header>
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="inicio">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge" data-es="<span class=\'dot\'></span> Disponible para proyectos y comisiones"><span class="dot"></span> Available for projects & commissions</div>
-        <h1 class="hero-title" data-es="Programador de Luau<br><span class=\'gradient-text\'>en Roblox</span>">Luau Programmer<br><span class="gradient-text">on Roblox</span></h1>
-        <p class="hero-description" data-es="Desarrollador especializado en crear sistemas modulares y escalables. Desde mecánicas básicas hasta sistemas limpios y optimizados.">Specialized Scripter building modular, scalable, and optimized systems. I focus on clean code and performance-driven game mechanics.</p>
-        <div class="hero-buttons">
-          <a href="#portafolio" class="btn-primary">
-            View Projects
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
-          </a>
-        </div>
+    <!-- Roblox watermark background -->
+    <div class="hero-bg-pattern" aria-hidden="true"></div>
 
+    <div class="container hero-inner">
+      <div class="hero-avatar-wrap fade-in">
+        <div class="hero-avatar-ring">
+          <img
+            src="assets/avatar.png"
+            alt="alexc308 Roblox avatar"
+            id="hero-avatar"
+            class="hero-avatar"
+            onerror="this.src='assets/luau.jpeg'"
+          >
+        </div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-image-wrapper">
-          <img src="assets/luau.jpeg" alt="Featured Roblox Project — Luau Systems">
-          </div>
-        </div>
 
+      <h1 class="hero-title fade-in scroll-delay-1">
+        <span data-i18n="hero.greeting">Hello, I'm</span> <span class="accent">alexc308</span>
+      </h1>
+      <p class="hero-subtitle fade-in scroll-delay-2" data-i18n="hero.subtitle">
+        Roblox Luau Developer · Modular Systems · Clean Code
+      </p>
+
+      <div class="hero-buttons fade-in scroll-delay-3">
+        <a href="#portafolio" class="btn-primary" id="btn-view-projects" data-i18n="hero.btn_projects">View Projects</a>
+        <a href="#contacto" class="btn-secondary" id="btn-contact" data-i18n="hero.btn_contact">Contact Me</a>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid fade-in scroll-delay-4">
+        <div class="stat-card">
+          <span class="stat-number accent">1+</span>
+          <span class="stat-label" data-i18n="stats.experience">Years of experience</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number accent">5+</span>
+          <span class="stat-label" data-i18n="stats.projects">Projects delivered</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number accent">100%</span>
+          <span class="stat-label" data-i18n="stats.quality">Clean code</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number accent">24h</span>
+          <span class="stat-label" data-i18n="stats.response">Response time</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== ABOUT ===== -->
-  <section class="about" id="sobre-mi">
+  <section class="section" id="sobre-mi">
     <div class="container">
-      <div class="about-grid reveal">
-        <div class="about-image">
-          <div class="about-image-main">
-            <img src="assets/Module.png" alt="About me — Roblox Modules">
+      <h2 class="section-title fade-in" data-i18n="about.title">About Me</h2>
+      <div class="about-grid fade-in scroll-delay-1">
+        <div class="about-image-col">
+          <div class="about-img-wrap">
+            <img src="assets/Module.png" alt="Roblox module example" class="about-img">
           </div>
         </div>
-        <div class="about-content">
-          <div class="section-label">Why Hire Me</div>
-          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
-            <li class="reveal reveal-delay-1" style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="color: var(--text-primary); font-weight: 700;">•</span>
-              <p style="margin: 0; color: var(--text-secondary); font-size: 0.98rem; line-height: 1.7;">I am a Luau programmer specializing in modular, clean, and highly scalable systems.</p>
+        <div class="about-text-col">
+          <ul class="about-list">
+            <li class="fade-in scroll-delay-1">
+              <span class="about-dot">▸</span>
+              <p data-i18n="about.p1">Luau programmer specializing in modular, clean, and scalable systems built from the ground up.</p>
             </li>
-            <li class="reveal reveal-delay-2" style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="color: var(--text-primary); font-weight: 700;">•</span>
-              <p style="margin: 0; color: var(--text-secondary); font-size: 0.98rem; line-height: 1.7;">I have a proven track record of writing easily expandable, DRY code that other developers can seamlessly read and maintain.</p>
+            <li class="fade-in scroll-delay-2">
+              <span class="about-dot">▸</span>
+              <p data-i18n="about.p2">Proven track record of writing DRY code that other developers can read, extend, and maintain with ease.</p>
             </li>
-            <li class="reveal reveal-delay-3" style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="color: var(--text-primary); font-weight: 700;">•</span>
-              <p style="margin: 0; color: var(--text-secondary); font-size: 0.98rem; line-height: 1.7;">I prioritize fluid communication, providing clients with consistent status updates and transparent progress tracking.</p>
+            <li class="fade-in scroll-delay-3">
+              <span class="about-dot">▸</span>
+              <p data-i18n="about.p3">I prioritize fluid communication — regular status updates and transparent progress tracking throughout every project.</p>
+            </li>
+            <li class="fade-in scroll-delay-4">
+              <span class="about-dot">▸</span>
+              <p data-i18n="about.p4">Available for commissions: systems, mechanics, backend, UI logic, and bug fixing.</p>
             </li>
           </ul>
         </div>
@@ -89,87 +141,62 @@
     </div>
   </section>
 
-  <!-- ===== SERVICES ===== -->
-  <section class="skills" id="servicios" style="border-bottom: none; padding-bottom: 40px; background: var(--bg-subtle);">
+  <!-- ===== SKILLS / SERVICES ===== -->
+  <section class="section section-alt" id="habilidades">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="section-label" data-es="Precios">Pricing</div>
-        <h2 class="section-title" data-es="Mis <span class=\'highlight\'>Servicios</span>">My <span class="highlight">Services</span></h2>
-        <div style="display: flex; flex-direction: column; gap: 12px; margin: 0 auto; max-width: 700px;">
-        <div class="reveal reveal-delay-1" style="display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-          <div style="display: flex; align-items: center; gap: 16px;">
-            <div style="background: var(--bg-subtle); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-            </div>
-            <h3 data-es="Sistemas o mecánicas básicas" style="margin: 0; font-size: 1.05rem; font-weight: 600;">Basic Systems & Mechanics</h3>
-          </div>
-          <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 500;" data-es="200 robux o menos">200 Robux or less</span>
-        </div>
-        
-        <div class="reveal reveal-delay-2" style="display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-          <div style="display: flex; align-items: center; gap: 16px;">
-            <div style="background: var(--bg-subtle); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
-            </div>
-            <h3 data-es="Sistemas intermedios" style="margin: 0; font-size: 1.05rem; font-weight: 600;">Intermediate Systems</h3>
-          </div>
-          <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 500;" data-es="500 robux">500 Robux</span>
-        </div>
+      <h2 class="section-title fade-in" data-i18n="skills.title">Scripting Skills</h2>
 
-        <div class="reveal reveal-delay-3" style="display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-          <div style="display: flex; align-items: center; gap: 16px;">
-            <div style="background: var(--bg-subtle); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="15" x2="23" y2="15"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="15" x2="4" y2="15"></line></svg>
-            </div>
-            <h3 data-es="Sistemas avanzados o complejos" style="margin: 0; font-size: 1.05rem; font-weight: 600;">Advanced & Complex Systems</h3>
-          </div>
-          <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 500;" data-es="1000 robux">1000 Robux</span>
+      <!-- Tech Stack chips -->
+      <div class="tech-stack fade-in scroll-delay-1">
+        <span class="tech-label" data-i18n="skills.stack">Tech Stack</span>
+        <div class="tech-chips">
+          <span class="chip chip-blue">● Luau</span>
+          <span class="chip chip-orange">● Roblox Studio</span>
+          <span class="chip chip-green">● ProfileStore</span>
+          <span class="chip chip-purple">● Knit / Trove / Signal</span>
+          <span class="chip chip-yellow">● Custom Systems</span>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ===== SKILLS ===== -->
-  <section class="skills" id="habilidades">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-label" data-es="Capacidades">Capabilities</div>
-        <h2 class="section-title" data-es="Habilidades de <span class=\'highlight\'>Scripting</span>">Scripting <span class="highlight">Skills</span></h2>
-      </div>
       <div class="skills-grid">
-        <div class="skill-card reveal reveal-delay-1">
-          <div class="skill-icon scripting">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <!-- CAN do -->
+        <div class="skill-card fade-in scroll-delay-1">
+          <div class="skill-icon-wrap green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
-          <h3 data-es="Lo que SÍ programo">What I CAN script</h3>
-          <ul style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.8; margin-top: 10px;">
-            <li data-es="• Combate y Habilidades">• Combat & Abilities</li>
-            <li data-es="• Backend / DataStores">• Backend / DataStores</li>
-            <li data-es="• Lógica UI (Frontend)">• UI Logic (Frontend)</li>
-            <li data-es="• Corrección de Bugs">• Bug Fixing & Debugging</li>
+          <h3 data-i18n="skills.can_title">What I CAN script</h3>
+          <ul class="skill-list">
+            <li data-i18n="skills.can1">Combat &amp; Abilities</li>
+            <li data-i18n="skills.can2">Backend / DataStores</li>
+            <li data-i18n="skills.can3">UI Logic (Frontend)</li>
+            <li data-i18n="skills.can4">Bug Fixing &amp; Debugging</li>
+            <li data-i18n="skills.can5">Round &amp; Game systems</li>
           </ul>
         </div>
-        <div class="skill-card reveal reveal-delay-2">
-          <div class="skill-icon ui">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+
+        <!-- CANNOT do -->
+        <div class="skill-card fade-in scroll-delay-2">
+          <div class="skill-icon-wrap red">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </div>
-          <h3 data-es="Lo que NO programo">What I DON'T script</h3>
-          <ul style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.8; margin-top: 10px;">
-            <li data-es="• I.A. compleja">• Complex A.I.</li>
-            <li data-es="• Sistemas vehiculares">• Vehicle Systems</li>
-            <li data-es="• Sistemas avanzados de armas">• Advanced Weapon Systems</li>
+          <h3 data-i18n="skills.cant_title">What I DON'T script</h3>
+          <ul class="skill-list">
+            <li data-i18n="skills.cant1">Complex A.I.</li>
+            <li data-i18n="skills.cant2">Vehicle Systems</li>
+            <li data-i18n="skills.cant3">Advanced Weapon Systems</li>
           </ul>
         </div>
-        <div class="skill-card reveal reveal-delay-3">
-          <div class="skill-icon studio">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+
+        <!-- Pricing -->
+        <div class="skill-card fade-in scroll-delay-3">
+          <div class="skill-icon-wrap orange">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
           </div>
-          <h3 data-es="Herramientas y Lenguajes">Tools & Languages</h3>
-          <ul style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.8; margin-top: 10px;">
-            <li data-es="• Luau (Nativo de Roblox)">• Luau (Native Roblox)</li>
-            <li data-es="• Knit Framework / Rojo">• Knit Framework/Trove/Signal/Timer</li>
-            <li data-es="• ProfileStore">• ProfileStore</li>
-            <li data-es="• Otros módulos útiles">• Other useful modules</li>
+          <h3 data-i18n="skills.pricing_title">Pricing</h3>
+          <ul class="skill-list pricing-list">
+            <li><span data-i18n="skills.price1">Basic Systems</span> <span class="price-tag">&le;200 R$</span></li>
+            <li><span data-i18n="skills.price2">Intermediate Systems</span> <span class="price-tag">500 R$</span></li>
+            <li><span data-i18n="skills.price3">Advanced Systems</span> <span class="price-tag">1000+ R$</span></li>
           </ul>
         </div>
       </div>
@@ -177,24 +204,34 @@
   </section>
 
   <!-- ===== PORTFOLIO ===== -->
-  <section class="portfolio" id="portafolio">
+  <section class="section" id="portafolio">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="section-label" data-es="Portafolio">Portfolio</div>
-        <h2 class="section-title" data-es="Mis <span class=\'highlight\'>Trabajos anteriores</span>">My Past <span class="highlight">Works</span></h2>
-      </div>
-
-
+      <h2 class="section-title fade-in" data-i18n="portfolio.title">My Work / Examples</h2>
 
       <div class="portfolio-grid" id="portfolioGrid">
 
+        <!-- Item 0 (Combat System) -->
+        <div class="portfolio-item fade-in scroll-delay-1"
+          data-category="completo"
+          data-img="assets/CombatSystem.mp4"
+          data-title="Advanced Combat System"
+          data-desc="Melee combat mechanics with hitboxes, combos, and vfx.">
+          <div class="portfolio-media">
+            <video src="assets/CombatSystem.mp4#t=0.1" loop muted playsinline preload="metadata"></video>
+          </div>
+          <div class="portfolio-info">
+            <h3>Advanced Combat System</h3>
+          </div>
+        </div>
+
         <!-- Item 1 -->
-        <div class="portfolio-item reveal" data-category="sistema" data-img="assets/TaptoBrainrot.png" data-title="Simulator and Deployment System" data-desc="">
-          <div class="portfolio-image">
-            <img src="assets/TaptoBrainrot.png" alt="Backend System — Roblox" loading="lazy">
-            <div class="portfolio-image-overlay">
-              <span class="portfolio-overlay-btn">🔍 View Details</span>
-            </div>
+        <div class="portfolio-item fade-in scroll-delay-1"
+          data-category="sistema"
+          data-img="assets/TaptoBrainrot.png"
+          data-title="Simulator and Deployment System"
+          data-desc="">
+          <div class="portfolio-media">
+            <img src="assets/TaptoBrainrot.png" alt="Simulator and Deployment System" loading="lazy">
           </div>
           <div class="portfolio-info">
             <h3>Simulator and Deployment System</h3>
@@ -202,12 +239,13 @@
         </div>
 
         <!-- Item 2 -->
-        <div class="portfolio-item reveal reveal-delay-1" data-category="sistema" data-img="assets/Inventory.png" data-title="Inventory System (ProfileStore)" data-desc="">
-          <div class="portfolio-image">
-            <img src="assets/Inventory.png" alt="Inventory System — Roblox" loading="lazy">
-            <div class="portfolio-image-overlay">
-              <span class="portfolio-overlay-btn">🔍 View Details</span>
-            </div>
+        <div class="portfolio-item fade-in scroll-delay-2"
+          data-category="sistema"
+          data-img="assets/Inventory.png"
+          data-title="Inventory System (ProfileStore)"
+          data-desc="">
+          <div class="portfolio-media">
+            <img src="assets/Inventory.png" alt="Inventory System" loading="lazy">
           </div>
           <div class="portfolio-info">
             <h3>Inventory System (ProfileStore)</h3>
@@ -215,12 +253,13 @@
         </div>
 
         <!-- Item 3 -->
-        <div class="portfolio-item reveal reveal-delay-2" data-category="ui" data-img="assets/Shop.png" data-title="MarketplaceService Shop" data-desc="">
-          <div class="portfolio-image">
-            <img src="assets/Shop.png" alt="UI Scripting — Roblox" loading="lazy">
-            <div class="portfolio-image-overlay">
-              <span class="portfolio-overlay-btn">🔍 View Details</span>
-            </div>
+        <div class="portfolio-item fade-in scroll-delay-3"
+          data-category="ui"
+          data-img="assets/Shop.png"
+          data-title="MarketplaceService Shop"
+          data-desc="">
+          <div class="portfolio-media">
+            <img src="assets/Shop.png" alt="MarketplaceService Shop" loading="lazy">
           </div>
           <div class="portfolio-info">
             <h3>MarketplaceService Shop</h3>
@@ -228,12 +267,13 @@
         </div>
 
         <!-- Item 4 -->
-        <div class="portfolio-item reveal" data-category="completo" data-img="assets/Ragdoll-System.mp4" data-title="Physical Ragdoll System" data-desc="">
-          <div class="portfolio-image">
-            <video src="assets/Ragdoll-System.mp4#t=0.1" loop muted playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover;"></video>
-            <div class="portfolio-image-overlay">
-              <span class="portfolio-overlay-btn">🔍 View Details</span>
-            </div>
+        <div class="portfolio-item fade-in scroll-delay-1"
+          data-category="completo"
+          data-img="assets/Ragdoll-System.mp4"
+          data-title="Physical Ragdoll System"
+          data-desc="">
+          <div class="portfolio-media">
+            <video src="assets/Ragdoll-System.mp4#t=0.1" loop muted playsinline preload="metadata"></video>
           </div>
           <div class="portfolio-info">
             <h3>Physical Ragdoll System</h3>
@@ -241,12 +281,13 @@
         </div>
 
         <!-- Item 5 -->
-        <div class="portfolio-item reveal reveal-delay-1" data-category="sistema" data-img="assets/RoundSystem-ItemAsylum.mp4" data-title="Item Asylum Style Round System" data-desc="">
-          <div class="portfolio-image">
-            <video src="assets/RoundSystem-ItemAsylum.mp4#t=0.1" loop muted playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover;"></video>
-            <div class="portfolio-image-overlay">
-              <span class="portfolio-overlay-btn">🔍 View Details</span>
-            </div>
+        <div class="portfolio-item fade-in scroll-delay-2"
+          data-category="sistema"
+          data-img="assets/RoundSystem-ItemAsylum.mp4"
+          data-title="Item Asylum Style Round System"
+          data-desc="">
+          <div class="portfolio-media">
+            <video src="assets/RoundSystem-ItemAsylum.mp4#t=0.1" loop muted playsinline preload="metadata"></video>
           </div>
           <div class="portfolio-info">
             <h3>Item Asylum Style Round System</h3>
@@ -257,56 +298,86 @@
     </div>
   </section>
 
-  <!-- ===== TERMS & PRICES ===== -->
-  <section class="skills" id="terminos" style="background: var(--bg-page); border-top: 1px solid var(--border); border-bottom: none;">
+  <!-- ===== TERMS ===== -->
+  <section class="section section-alt" id="terminos">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="section-label" data-es="Reglas">Rules</div>
-        <h2 class="section-title" data-es="Términos y <span class=\'highlight\'>Precios</span>">Terms & <span class="highlight">Prices</span></h2>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-card reveal reveal-delay-1" style="background: var(--bg-card);">
-          <div class="skill-icon scripting">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+      <h2 class="section-title fade-in" data-i18n="terms.title">Terms &amp; Conditions</h2>
+      <div class="terms-grid">
+        <div class="term-card fade-in scroll-delay-1">
+          <div class="term-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
           </div>
-          <h3 data-es="Métodos de Pago">Payment Methods</h3>
-          <p data-es="Solo acepto Paypal o Robux.">I exclusively accept PayPal (USD) or Robux via DevEx equivalent rates.</p>
+          <h3 data-i18n="terms.payment_title">Payment Methods</h3>
+          <p data-i18n="terms.payment_desc">I exclusively accept PayPal (USD) or Robux via DevEx equivalent rates.</p>
         </div>
-        <div class="skill-card reveal reveal-delay-2" style="background: var(--bg-card);">
-          <div class="skill-icon lua">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <div class="term-card fade-in scroll-delay-2">
+          <div class="term-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
           </div>
-          <h3 data-es="Políticas de Comisiones">Commission Policies</h3>
-          <p data-es="Raramente acepto posiciones a largo plazo a menos que el proyecto tenga buena planificación.">I rarely take on long-term revshare positions unless the project exhibits excellent pre-planning and potential.</p>
+          <h3 data-i18n="terms.policy_title">Commission Policy</h3>
+          <p data-i18n="terms.policy_desc">I rarely take on long-term revshare unless the project shows excellent planning and potential.</p>
         </div>
-        <div class="skill-card reveal reveal-delay-3" style="background: var(--bg-card);">
-          <div class="skill-icon ui">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <div class="term-card fade-in scroll-delay-3">
+          <div class="term-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
           </div>
-          <h3>Upfront Payment</h3>
-          <p>A mandatory 50% upfront payment is strictly required to secure my time and prevent potential delays from either side.</p>
+          <h3 data-i18n="terms.upfront_title">Upfront Payment</h3>
+          <p data-i18n="terms.upfront_desc">A mandatory 50% upfront is required to secure my time and prevent delays from either side.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section class="about" id="contacto" style="background: var(--bg-card); border-top: 1px solid var(--border);">
-    <div class="container" style="text-align: center; max-width: 600px;">
-      <div class="section-header reveal" style="margin-bottom: 30px;">
-        <div class="section-label">Let's Talk</div>
-        <h2 class="section-title">Contact <span class="highlight">Me</span></h2>
+  <section class="section" id="contacto">
+    <div class="container contact-container">
+      <h2 class="section-title fade-in" data-i18n="contact.title">Contact &amp; Social Media</h2>
+      <p class="contact-desc fade-in scroll-delay-1" data-i18n="contact.desc">
+        Feel free to reach out via any of these platforms:
+      </p>
+
+      <div class="social-list">
+
+        <!-- Discord -->
+        <a href="https://discord.com/users/673224971954421792"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="social-card fade-in scroll-delay-1"
+           id="social-discord">
+          <div class="social-icon-wrap discord-color">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 127.14 96.36">
+              <path fill="currentColor" d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a67.58,67.58,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1,105.25,105.25,0,0,0,32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.68,65.33C38,65.33,34.05,60.95,34.05,55.56s3.83-9.77,8.63-9.77,8.69,4.42,8.58,9.77c0,5.39-3.83,9.77-8.58,9.77Zm41.78,0c-4.71,0-8.63-4.38-8.63-9.77s3.83-9.77,8.63-9.77,8.68,4.42,8.58,9.77c0,5.39-3.83,9.77-8.58,9.77Z"/>
+            </svg>
+          </div>
+          <div class="social-info">
+            <span class="social-platform">Discord</span>
+            <span class="social-handle">alexc308</span>
+          </div>
+          <span class="social-arrow">→</span>
+        </a>
+
+        <!-- Roblox -->
+        <a href="https://www.roblox.com/users/1640644089/profile"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="social-card fade-in scroll-delay-2"
+           id="social-roblox">
+          <div class="social-icon-wrap roblox-color">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 200 200" fill="currentColor">
+              <path d="M 28 18 L 60 152 L 172 120 L 140 -14 Z" transform="translate(0,28)"/>
+            </svg>
+          </div>
+          <div class="social-info">
+            <span class="social-platform">Roblox</span>
+            <span class="social-handle" data-i18n="contact.roblox_action">View profile</span>
+          </div>
+          <span class="social-arrow">→</span>
+        </a>
+
       </div>
-      <p class="reveal" style="color: var(--text-secondary); margin-bottom: 30px; line-height: 1.8;">Ready to commission a system? Send me a DM over on Discord and we'll discuss scope, deadlines, and pricing.</p>
-      <a href="https://discord.com/users/673224971954421792" target="_blank" rel="noopener noreferrer" class="discord-btn reveal reveal-delay-1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 127.14 96.36"><path fill="#5865F2" d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a67.58,67.58,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1,105.25,105.25,0,0,0,32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.68,65.33C38,65.33,34.05,60.95,34.05,55.56s3.83-9.77,8.63-9.77,8.69,4.42,8.58,9.77c0,5.39-3.83,9.77-8.58,9.77Zm41.78,0c-4.71,0-8.63-4.38-8.63-9.77s3.83-9.77,8.63-9.77,8.68,4.42,8.58,9.77c0,5.39-3.83,9.77-8.58,9.77Z"/></svg>
-        <div style="text-align: left;">
-          <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--text-primary); margin: 0; line-height: 1;">alexc308</h3>
-          <span style="font-size: 0.8rem; color: var(--text-muted);">Click here</span>
-        </div>
-      </a>
     </div>
   </section>
+
 
   <!-- ===== LIGHTBOX ===== -->
   <div class="lightbox" id="lightbox">
@@ -315,7 +386,7 @@
       <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">❮</button>
       <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">❯</button>
       <img src="" alt="" id="lightboxImg">
-      <video src="" id="lightboxVid" autoplay loop controls playsinline style="display: none; width: 100%; border-radius: 8px;"></video>
+      <video src="" id="lightboxVid" autoplay loop controls playsinline style="display:none;width:100%;border-radius:10px;"></video>
       <div class="lightbox-info">
         <h3 id="lightboxTitle"></h3>
         <p id="lightboxDesc"></p>
